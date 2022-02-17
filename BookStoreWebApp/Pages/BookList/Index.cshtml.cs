@@ -1,6 +1,7 @@
 using BookStoreWebApp.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookStoreWebApp.Pages.BookList
 {
@@ -16,9 +17,9 @@ namespace BookStoreWebApp.Pages.BookList
 
         public IEnumerator<Book> Books { get; set; }
 
-        public void OnGet()
+        public async Task OnGet()
         {
-
+            Books = (IEnumerator<Book>)await _db.Book.ToListAsync();
         }
     }
 }
