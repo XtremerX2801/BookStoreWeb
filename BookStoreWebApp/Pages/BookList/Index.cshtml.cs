@@ -14,6 +14,7 @@ namespace BookStoreWebApp.Pages.BookList
             _db = db;
         }
 
+        public IEnumerator<Book> Books { get; set; }
 
         public void OnGet()
         {
