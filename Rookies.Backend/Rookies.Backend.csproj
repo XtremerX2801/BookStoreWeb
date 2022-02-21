@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <BaseOutputPath>net6.0</BaseOutputPath>
+    <BaseOutputPath></BaseOutputPath>
     <BaseIntermediateOutputPath></BaseIntermediateOutputPath>
     <ProduceReferenceAssembly>True</ProduceReferenceAssembly>
     <OutputType>Exe</OutputType>

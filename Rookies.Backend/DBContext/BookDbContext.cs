@@ -17,18 +17,18 @@ namespace Rookies.Backend
 
         public DbSet<Book> Books { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            var configure = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsetting.json")
-                .Build();
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    var configure = new ConfigurationBuilder()
+        //        .SetBasePath(Directory.GetCurrentDirectory())
+        //        .AddJsonFile("appsetting.json")
+        //        .Build();
 
-            var connectionString = configure.GetConnectionString("AppDb");
+        //    var connectionString = configure.GetConnectionString("AppDb");
         
-            optionsBuilder.UseSqlServer(connectionString);
+        //    optionsBuilder.UseSqlServer(connectionString);
         
-        }
+        //}
 
     }
 }
