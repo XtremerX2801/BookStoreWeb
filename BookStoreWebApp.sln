@@ -7,7 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookies.Backend", "Rookies.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedClassLibrary", "SharedClassLibrary\SharedClassLibrary.csproj", "{7CA0054D-C652-4638-8DAE-31DBA00F92B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rookies.CustomerSites", "Rookies.CustomerSites\Rookies.CustomerSites.csproj", "{EAFE1AD5-30A3-4A5E-AF78-E6203B688D8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookies.CustomerSites", "Rookies.CustomerSites\Rookies.CustomerSites.csproj", "{EAFE1AD5-30A3-4A5E-AF78-E6203B688D8F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{04240ABD-F393-4F06-835F-739AD9F61437}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
