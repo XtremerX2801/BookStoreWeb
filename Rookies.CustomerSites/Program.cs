@@ -5,6 +5,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 //builder.Services.AddDbContext<ApplicationDBContext>(options =>
 //{
