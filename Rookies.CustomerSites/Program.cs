@@ -7,13 +7,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
-//builder.Services.AddDbContext<ApplicationDBContext>(options =>
-//{
-//    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-
-//});
-//builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
-
 var app = builder.Build();
 
 app.UseSwaggerUI();
