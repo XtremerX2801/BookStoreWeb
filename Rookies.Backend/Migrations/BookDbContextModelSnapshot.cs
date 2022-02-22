@@ -9,7 +9,7 @@ using Rookies.Backend;
 
 namespace Rookies.Backend.Migrations
 {
-    [DbContext(typeof(BookDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class BookDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

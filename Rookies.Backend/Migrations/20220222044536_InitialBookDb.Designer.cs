@@ -10,7 +10,7 @@ using Rookies.Backend;
 
 namespace Rookies.Backend.Migrations
 {
-    [DbContext(typeof(BookDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20220222044536_InitialBookDb")]
     partial class InitialBookDb
     {
