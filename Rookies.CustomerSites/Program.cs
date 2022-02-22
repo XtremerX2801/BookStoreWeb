@@ -27,6 +27,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.MapRazorPages();
+
 //app.UseEndpoints(endpoints => endpoints.MapGet("/", async context => await context.Response.WriteAsync("")));
 
 app.MapControllerRoute(
