@@ -23,7 +23,7 @@ namespace Rookies.Backend.Controllers
         {
             return Enumerable.Range(1, 5).Select(index => new Book
             {
-                Id = Random.Shared.Next(-20, 55),
+                BookId = Random.Shared.Next(-20, 55),
                 BookName = "Book Name",
                 Author = "Author Name"
             })
