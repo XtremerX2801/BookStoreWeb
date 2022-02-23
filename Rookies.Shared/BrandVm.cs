@@ -1,4 +1,4 @@
-﻿namespace RookieShop.Shared
+﻿namespace Rookies.Shared
 {
     public class BrandVm
     {

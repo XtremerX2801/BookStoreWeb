@@ -1,6 +1,6 @@
-using RookieShop.Shared.Enum;
+using Rookies.Shared.Enum;
 
-namespace RookieShop.Shared.Dto
+namespace Rookies.Shared.Dto
 {
     public class BaseQueryCriteriaDto
     {

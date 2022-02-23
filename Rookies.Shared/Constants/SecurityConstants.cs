@@ -1,4 +1,4 @@
-namespace RookieShop.Shared.Constants
+namespace Rookies.Shared.Constants
 {
     public static class SecurityConstants
     {

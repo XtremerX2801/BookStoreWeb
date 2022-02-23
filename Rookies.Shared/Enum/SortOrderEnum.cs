@@ -1,4 +1,4 @@
-namespace RookieShop.Shared.Enum
+namespace Rookies.Shared.Enum
 {
     public enum SortOrderEnum
     {

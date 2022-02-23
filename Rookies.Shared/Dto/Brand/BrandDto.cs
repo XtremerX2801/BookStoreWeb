@@ -1,4 +1,4 @@
-namespace RookieShop.Shared.Dto.Brand
+namespace Rookies.Shared.Dto.Brand
 {
     public class BrandDto
     {
