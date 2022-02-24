@@ -45,12 +45,22 @@ app.UseEndpoints(endpoints =>
 
     endpoints.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}"
+        pattern: "{controller=Home}/{action=Index}"
+    );
+
+    endpoints.MapControllerRoute(
+        name: "privacyDefault",
+        pattern: "{controller=Home}/{action=Privacy}"
     );
 
     endpoints.MapControllerRoute(
         name: "categoryDefault",
         pattern: "{controller=Category}/{action=Index}/{id?}"
+    );
+
+    endpoints.MapControllerRoute(
+        name: "bookDefault",
+        pattern: "{controller=Book}/{action=Index}/{id?}"
     );
 });
 
