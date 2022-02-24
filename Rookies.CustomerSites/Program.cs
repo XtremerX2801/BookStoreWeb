@@ -1,3 +1,4 @@
+using Rookies.Backend.Controllers;
 using Rookies.CustomerSites.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -35,10 +36,22 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
-//app.UseEndpoints(endpoints => endpoints.MapGet("/", async context => await context.Response.WriteAsync("")));
+app.UseEndpoints(endpoints =>
+{
+    endpoints.MapGet("/simp", async (context) =>
+    {
+        await context.Response.WriteAsync($"Squire In My Pants!");
+    });
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    endpoints.MapControllerRoute(
+        name: "default",
+        pattern: "{controller=Home}/{action=Index}/{id?}"
+    );
+
+    endpoints.MapControllerRoute(
+        name: "categoryDefault",
+        pattern: "{controller=Category}/{action=Index}/{id?}"
+    );
+});
 
 app.Run();

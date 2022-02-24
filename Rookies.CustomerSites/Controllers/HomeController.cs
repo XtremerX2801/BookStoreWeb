@@ -18,11 +18,7 @@ namespace Rookies.CustomerSites.Controllers
             return View();
         }
 
-        public IActionResult Category()
-        {
-            return View();
-        }
-
+        [Route("privacy")]
         public IActionResult Privacy()
         {
             return View();
