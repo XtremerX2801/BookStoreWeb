@@ -1,8 +1,5 @@
-﻿@model List<Rookies.Backend.Models.Book>
-<h3>BOOK LIST</h3>
+﻿@model Rookies.Backend.Models.Book
+<h3>A Book</h3>
 <ul>
-    @foreach (var book in Model)
-    {
-        <li><a href="">@book.BookName</a></li>
-    }
+    <li>Name: @Model.BookName - Category: @Model.BookCategory</li>
 </ul>

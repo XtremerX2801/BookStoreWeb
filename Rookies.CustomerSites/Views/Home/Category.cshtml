@@ -4,5 +4,7 @@
 
 @await Component.InvokeAsync("Category")
 
-@await Component.InvokeAsync("Book")
+@await Component.InvokeAsync("Books")
+
+@await Component.InvokeAsync("Book", new Random().Next(1, 4))
 

@@ -10,10 +10,10 @@ namespace Rookies.CustomerSites.ViewComponents
         {
             _bookService = bookService;
         }
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<IViewComponentResult> InvokeAsync(int id)
         {
-            var books = await _bookService.GetBooksAsync();
-            return View(books);
+            var book = await _bookService.GetBookAsync(id);
+            return View(book);
         }
     }
 }
