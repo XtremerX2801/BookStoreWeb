@@ -1,0 +1,8 @@
+﻿@model List<Rookies.Backend.Models.User>
+<h3>Users</h3>
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>@user.UserName</li>
+    }
+</ul>

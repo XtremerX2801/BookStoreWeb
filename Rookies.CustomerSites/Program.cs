@@ -1,3 +1,5 @@
+using Rookies.CustomerSites.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +8,10 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+
+builder.Services.AddMvc();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
+builder.Services.AddTransient<IUserService, UserService>();
 
 var app = builder.Build();
 
