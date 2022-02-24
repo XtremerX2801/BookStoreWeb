@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Rookies.Backend\Rookies.Backend.csproj" />
+    <ProjectReference Include="..\Rookies.Shared\Rookies.Shared.csproj" />
   </ItemGroup>
 
 </Project>
