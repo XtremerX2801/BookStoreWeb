@@ -11,7 +11,7 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddMvc();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
-builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IBookService, BookService>();
 
 var app = builder.Build();
 

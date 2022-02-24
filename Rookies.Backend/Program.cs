@@ -13,8 +13,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseInMemoryDatabase("BookList"));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
