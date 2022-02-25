@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rookies.Backend.Models;
+using Rookies.Shared.Dto.Book;
 
 namespace Rookies.Backend.Controllers
 {
@@ -9,10 +11,12 @@ namespace Rookies.Backend.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public CategoriesController(ApplicationDbContext context)
+        public CategoriesController(ApplicationDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Categories
@@ -24,16 +28,17 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Categories/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Category>> GetCategory(int id)
+        public async Task<ActionResult<CategoryDto>> GetCategory(int id)
         {
             var category = await _context.Categories.FindAsync(id);
+            var categoryDto = _mapper.Map<CategoryDto>(category);
 
             if (category == null)
             {
                 return NotFound();
             }
 
-            return category;
+            return Ok(categoryDto);
         }
 
         // PUT: api/Categories/5

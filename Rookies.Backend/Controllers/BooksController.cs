@@ -31,10 +31,10 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Books/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<BookDto>> GetBook(int id)
+        public async Task<ActionResult<CategoryDto>> GetBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
-            var bookDto = _mapper.Map<BookDto>(book);
+            var bookDto = _mapper.Map<CategoryDto>(book);
 
             if (book == null)
             {

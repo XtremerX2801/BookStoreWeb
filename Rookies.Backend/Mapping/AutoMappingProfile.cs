@@ -10,7 +10,7 @@ namespace Rookies.Backend.Mapping
         {
             public AutoMapperProfile()
             {
-                CreateMap<Book, BookDto>();
+                CreateMap<Book, CategoryDto>();
             }
         }
     }
