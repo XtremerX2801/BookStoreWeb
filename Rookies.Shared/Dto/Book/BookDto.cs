@@ -1,6 +1,6 @@
 ﻿namespace Rookies.Shared.Dto.Book
 {
-    public class CategoryDto
+    public class BookDto
     {
         public string BookName { get; set; }
 
