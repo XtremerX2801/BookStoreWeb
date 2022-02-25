@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rookies.Backend.Models;
-using Rookies.Shared.Dto.Category;
+using Rookies.Shared.Dto.Book;
 
 namespace Rookies.Backend.Controllers
 {
@@ -31,10 +31,10 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Books/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<CategoryDto>> GetBook(int id)
+        public async Task<ActionResult<BookDto>> GetBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
-            var bookDto = _mapper.Map<CategoryDto>(book);
+            var bookDto = _mapper.Map<BookDto>(book);
 
             if (book == null)
             {

@@ -5,7 +5,7 @@ namespace Rookies.CustomerSites.ViewComponents
 {
     public class CategoryViewComponent: ViewComponent
     {
-        private ICategoryService _categoryService;
+        private readonly ICategoryService _categoryService;
         public CategoryViewComponent(ICategoryService categoryService)
         {
             _categoryService = categoryService;

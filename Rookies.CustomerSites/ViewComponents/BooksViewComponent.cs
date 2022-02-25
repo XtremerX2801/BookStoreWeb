@@ -5,7 +5,7 @@ namespace Rookies.CustomerSites.ViewComponents
 {
     public class BooksViewComponent : ViewComponent
     {
-        private IBookService _booksService;
+        private readonly IBookService _booksService;
         public BooksViewComponent(IBookService booksService)
         {
             _booksService = booksService;
