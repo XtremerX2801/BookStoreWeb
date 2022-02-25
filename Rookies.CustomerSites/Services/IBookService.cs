@@ -6,5 +6,7 @@ namespace Rookies.CustomerSites.Services
     {
         Task<List<Book>> GetBooksAsync();
         Task<Book> GetBookAsync(int id);
+
+        void DeleteBookAsync(int id);
     }
 }

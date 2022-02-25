@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rookies.Backend.Models;
+using Rookies.Shared.Dto.Book;
 
 namespace Rookies.Backend.Controllers
 {
@@ -9,10 +11,15 @@ namespace Rookies.Backend.Controllers
     public class BooksController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
+        // private readonly IFileStorageService _fileStorageService;
 
-        public BooksController(ApplicationDbContext context)
+        public BooksController(
+            ApplicationDbContext context,
+            IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Books
@@ -24,16 +31,17 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Books/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Book>> GetBook(int id)
+        public async Task<ActionResult<BookDto>> GetBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
+            var bookDto = _mapper.Map<BookDto>(book);
 
             if (book == null)
             {
                 return NotFound();
             }
 
-            return book;
+            return Ok(bookDto);
         }
 
         // PUT: api/Books/5
