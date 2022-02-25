@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rookies.Backend.Models;
-using Rookies.Shared.Dto.Book;
+using Rookies.Shared.Dto.Category;
 
 namespace Rookies.Backend.Controllers
 {
