@@ -4,12 +4,17 @@ using Rookies.Backend.Models;
 
 namespace Rookies.Backend
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<User>
     {
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
         }
 
         public DbSet<Category> Categories { get; set; }
