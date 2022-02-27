@@ -5,164 +5,184 @@
 }
 
 <head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width", initial-scale=1 />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 	<link rel="stylesheet" href="~/Style/HomeStyle.css" type="text/css" />
+	<script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
 </head>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
 </div>
 
-@*<div class="small-container">
-	<h2 class="featured-title">Featured Products</h2>
-	<div class="book-row">
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-o" ></i>
+<section class="product">
+	<div class="container">
+		<div class="row py-5">
+			<div class="col-lg-5 m-auto text-center">
+				<h1>Featured Products</h1>
+				<h6 style="color: red;">New Horizon Awaits!</h6>
 			</div>
-			<p>Price</p>
 		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-half-o" ></i>
+		<div class="row">
+			<div class="col-lg-3 text-center">
+				<div class="card border-0 bg-light mb-2">
+					<div class="card-body">
+						<img src="" class="img-fluid" alt="" />
+					</div>
+				</div>
+				<h6>Title1</h6>
+				<p>Price1</p>
 			</div>
-			<p>Price</p>
+
+			<div class="col-lg-3 text-center">
+				<div class="card border-0 bg-light mb-2">
+					<div class="card-body">
+						<img src="" class="img-fluid" alt="" />
+					</div>
+				</div>
+				<h6>Title2</h6>
+				<p>Price2</p>
+			</div>
+
+			<div class="col-lg-3 text-center">
+				<div class="card border-0 bg-light mb-2">
+					<div class="card-body">
+						<img src="" class="img-fluid" alt="" />
+					</div>
+				</div>
+				<h6>Title3</h6>
+				<p>Price3</p>
+			</div>
+
+			<div class="col-lg-3 text-center">
+				<div class="card border-0 bg-light mb-2">
+					<div class="card-body">
+						<img src="" class="img-fluid" alt="" />
+					</div>
+				</div>
+				<h6>Title4</h6>
+				<p>Price4</p>
+			</div>
 		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
+
+		<div class="row">
+			<div class="col-lg-6 text-center m-auto">
+				<button class="btn1">Click For More</button>
 			</div>
-			<p>Price</p>
-		</div>
-	</div>
-		
-	<h2 class="latest-title">Latest Products</h2>
-	<div class="book-row">
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-o" ></i>
-			</div>
-			<p>Price</p>
-		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-half-o" ></i>
-			</div>
-			<p>Price</p>
-		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-half-o" ></i>
-				<i class="fa fa-star-o" ></i>
-			</div>
-			<p>Price</p>
-		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-			</div>
-			<p>Price</p>
-		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-half-o" ></i>
-				<i class="fa fa-star-o" ></i>
-			</div>
-			<p>Price</p>
-		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-half-o" ></i>
-				<i class="fa fa-star-o" ></i>
-			</div>
-			<p>Price</p>
-		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-half-o" ></i>
-				<i class="fa fa-star-o" ></i>
-			</div>
-			<p>Price</p>
-		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-half-o" ></i>
-				<i class="fa fa-star-o" ></i>
-			</div>
-			<p>Price</p>
-		</div>
-		<div class="col-4">
-			<img src="">
-			<h4>Product Name</h4>
-			<div class="rating">
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star" ></i>
-				<i class="fa fa-star-half-o" ></i>
-				<i class="fa fa-star-o" ></i>
-			</div>
-			<p>Price</p>
 		</div>
 	</div>
-</div>*@
+</section>
+
+<section class="shop">
+	<div class="container">
+		<div class="row py-5">
+			<div class="col-lg-8 m-auto text-center">
+				<h1>Explore Our Store</h1>
+				<h6 style="color: red;">Pick Your Product From Our Store</h6>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-lg-3 text-center">
+				<div class="card border-0 bg-light mb-2">
+					<div class="card-body">
+						<img src="" class="img-fluid" alt="" />
+					</div>
+				</div>
+				<h6>Title1</h6>
+				<p>Price1</p>
+			</div>
+
+			<div class="col-lg-3 text-center">
+				<div class="card border-0 bg-light mb-2">
+					<div class="card-body">
+						<img src="" class="img-fluid" alt="" />
+					</div>
+				</div>
+				<h6>Title2</h6>
+				<p>Price2</p>
+			</div>
+
+			<div class="col-lg-3 text-center">
+				<div class="card border-0 bg-light mb-2">
+					<div class="card-body">
+						<img src="" class="img-fluid" alt="" />
+					</div>
+				</div>
+				<h6>Title3</h6>
+				<p>Price3</p>
+			</div>
+
+			<div class="col-lg-3 text-center">
+				<div class="card border-0 bg-light mb-2">
+					<div class="card-body">
+						<img src="" class="img-fluid" alt="" />
+					</div>
+				</div>
+				<h6>Title4</h6>
+				<p>Price4</p>
+			</div>
+		</div>
+	</div>
+</section>
+
+@*<section class="bigview py-5 text-center">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6">
+				<h1 class="font-weight-bold py-3">Unlock Your Potential With Good Nutrion</h1>
+				<h6>Be Healthy Organic Food</h6>
+				<button class="btn1 mt-3>More From Us"></button>
+			</div>
+		</div>
+	</div>
+</section>*@
+
+<section class="news py-5">
+	<div class="container py-5">
+		<div class="row">
+			<div class="col-lg-9 m-auto text-center">
+				<h1>Join Our Society</h1>
+				<input type="text" class="px-3" placeholder="Enter Your Email" />
+				<button class="btn2">Submit</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-11">
+				<div class="row">
+					<div class="col-lg-3 py-3">
+						<h5 class="pb-3">CUSTOMER CARE</h5>
+						<p>Regular</p>
+						<p>On Time</p>
+						<p>Always Care</p>
+					</div>
+					<div class="col-lg-3 py-3">
+						<h5 class="pb-3">CUSTOMER CARE</h5>
+						<p>Regular</p>
+						<p>On Time</p>
+						<p>Always Care</p>
+					</div>
+					<div class="col-lg-3 py-3">
+						<h5 class="pb-3">CUSTOMER CARE</h5>
+						<p>Regular</p>
+						<p>On Time</p>
+						<p>Always Care</p>
+					</div>
+					<div class="col-lg-3 py-3">
+						<h5 class="mb-3">CUSTOMER CARE</h5>
+						<span><i class="fab fa-facebook"></i></span>
+						<span><i class="fab fa-instagram"></i></span>
+						<span><i class="fab fa-twitter"></i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr>
+		<p class="">Copyright 2022 All rights reserved</p>
+	</div>
+</section>
+

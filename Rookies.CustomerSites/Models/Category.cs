@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Rookies.CustomerSites.Models
+﻿namespace Rookies.CustomerSites.Models
 {
     public class Category
     {

@@ -23,10 +23,6 @@ builder.Services.AddSwaggerGen();
 //    .AddEntityFrameworkStores<ApplicationDbContext>()
 //    .AddDefaultTokenProviders();
 
-builder.Services.AddDefaultIdentity<User>()
-    .AddEntityFrameworkStores<ApplicationDbContext>()
-    .AddDefaultTokenProviders();
-
 builder.Services.Configure<IdentityOptions>(options => 
 {
     options.Password.RequireUppercase = false; // No need uppercase letter
@@ -40,6 +36,10 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.User.RequireUniqueEmail = true; // 1 Email only for 1 User
     options.SignIn.RequireConfirmedEmail = true; // Need to verify email
 });
+
+builder.Services.AddDefaultIdentity<User>()
+    .AddEntityFrameworkStores<ApplicationDbContext>()
+    .AddDefaultTokenProviders();
 
 var app = builder.Build();
 
