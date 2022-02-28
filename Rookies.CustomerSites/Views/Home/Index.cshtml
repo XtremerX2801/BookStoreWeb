@@ -1,4 +1,5 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Rookies.CustomerSites.Models.Book
 
 @{
     ViewData["Title"] = "Home Page";
@@ -15,7 +16,6 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 
 </div>
 
@@ -34,8 +34,7 @@
 						<img src="" class="img-fluid" alt="" />
 					</div>
 				</div>
-				<h6>Title1</h6>
-				<p>Price1</p>
+				@await Component.InvokeAsync("Book", 1)
 			</div>
 
 			<div class="col-lg-3 text-center">
@@ -44,8 +43,7 @@
 						<img src="" class="img-fluid" alt="" />
 					</div>
 				</div>
-				<h6>Title2</h6>
-				<p>Price2</p>
+				@await Component.InvokeAsync("Book", 2)
 			</div>
 
 			<div class="col-lg-3 text-center">
@@ -54,8 +52,7 @@
 						<img src="" class="img-fluid" alt="" />
 					</div>
 				</div>
-				<h6>Title3</h6>
-				<p>Price3</p>
+				@await Component.InvokeAsync("Book", 4)
 			</div>
 
 			<div class="col-lg-3 text-center">
@@ -64,8 +61,7 @@
 						<img src="" class="img-fluid" alt="" />
 					</div>
 				</div>
-				<h6>Title4</h6>
-				<p>Price4</p>
+				@await Component.InvokeAsync("Book", 5)
 			</div>
 		</div>
 
@@ -93,8 +89,7 @@
 						<img src="" class="img-fluid" alt="" />
 					</div>
 				</div>
-				<h6>Title1</h6>
-				<p>Price1</p>
+				@await Component.InvokeAsync("Book", 1)
 			</div>
 
 			<div class="col-lg-3 text-center">
@@ -103,8 +98,7 @@
 						<img src="" class="img-fluid" alt="" />
 					</div>
 				</div>
-				<h6>Title2</h6>
-				<p>Price2</p>
+				@await Component.InvokeAsync("Book", 2)
 			</div>
 
 			<div class="col-lg-3 text-center">
@@ -113,8 +107,9 @@
 						<img src="" class="img-fluid" alt="" />
 					</div>
 				</div>
-				<h6>Title3</h6>
-				<p>Price3</p>
+				
+				@await Component.InvokeAsync("Book", 4)
+
 			</div>
 
 			<div class="col-lg-3 text-center">
@@ -123,24 +118,11 @@
 						<img src="" class="img-fluid" alt="" />
 					</div>
 				</div>
-				<h6>Title4</h6>
-				<p>Price4</p>
+				@await Component.InvokeAsync("Book", 5)
 			</div>
 		</div>
 	</div>
 </section>
-
-@*<section class="bigview py-5 text-center">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-6">
-				<h1 class="font-weight-bold py-3">Unlock Your Potential With Good Nutrion</h1>
-				<h6>Be Healthy Organic Food</h6>
-				<button class="btn1 mt-3>More From Us"></button>
-			</div>
-		</div>
-	</div>
-</section>*@
 
 <section class="news py-5">
 	<div class="container py-5">

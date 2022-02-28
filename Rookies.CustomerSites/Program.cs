@@ -63,6 +63,8 @@ app.UseEndpoints(endpoints =>
         name: "bookDefault",
         pattern: "{controller=Book}/{action=Index}/{id?}"
     );
+
+    endpoints.MapRazorPages();
 });
 
 app.Run();
