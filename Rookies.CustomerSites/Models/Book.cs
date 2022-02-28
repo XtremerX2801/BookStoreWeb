@@ -7,5 +7,7 @@
         public string BookName { get; set; }
 
         public string Author { get; set; }
+
+        public int BookPrice { get; set; }
     }
 }

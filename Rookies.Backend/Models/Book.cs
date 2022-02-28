@@ -14,5 +14,7 @@ namespace Rookies.Backend.Models
 
         [Required]
         public string BookCategory { get; set; }
+
+        public int? BookPrice { get; set; }
     }
 }
