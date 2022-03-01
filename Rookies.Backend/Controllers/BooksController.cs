@@ -24,13 +24,13 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Books
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
+        public async Task<ActionResult<IEnumerable<BookDto>>> GetBooks()
         {
-            return await _context.Books.ToListAsync();
+            return Ok(await _context.Books.ToListAsync());
         }
 
         // GET: api/Books/5
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<ActionResult<BookDto>> GetBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
@@ -40,6 +40,16 @@ namespace Rookies.Backend.Controllers
             {
                 return NotFound();
             }
+
+            return Ok(bookDto);
+        }
+
+        // GET: api/Books/Name
+        [HttpGet("search/{BookName}")]
+        public ActionResult<List<BookDto>> GetProductByName(string bookName)
+        {
+            var book = GetBookByName(bookName);
+            var bookDto = _mapper.Map<List<BookDto>>(book);
 
             return Ok(bookDto);
         }
@@ -105,6 +115,12 @@ namespace Rookies.Backend.Controllers
         private bool BookExists(int id)
         {
             return _context.Books.Any(e => e.BookId == id);
+        }
+
+        private List<Book> GetBookByName(string BookName)
+        {
+            var book = _context.Books.Where(p => p.BookName.Contains(BookName)).ToList();
+            return book;
         }
     }
 }
