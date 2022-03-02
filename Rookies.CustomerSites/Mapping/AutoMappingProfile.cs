@@ -1,7 +1,8 @@
 ﻿using AutoMapper;
-using Rookies.CustomerSites.Models;
+using Rookies.CustomerSites.ViewModel;
 using Rookies.Shared.Dto.Category;
 using Rookies.Shared.Dto.Book;
+using Rookies.Shared.Dto;
 
 namespace Rookies.CustomerSites.Mapping
 {
@@ -12,6 +13,7 @@ namespace Rookies.CustomerSites.Mapping
             public AutoMapperProfile()
             {
                 CreateMap<Book, BookDto>();
+                CreateMap<PagedResponseDto<BookDto>, PagedResponseVM<Book>>();
                 CreateMap<Category, CategoryDto>();
             }
         }

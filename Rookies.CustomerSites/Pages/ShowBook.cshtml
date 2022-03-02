@@ -1,5 +1,5 @@
-﻿@page
-@model Rookies.CustomerSites.Pages.IndexModel
+﻿@page "/book-search"
+@model Rookies.CustomerSites.Pages.BookSearchModel
 @{
 }
 
@@ -11,3 +11,5 @@
         </p>
     </div>
 </form>
+
+@await Component.InvokeAsync("BookSearch", Model.PagedResponseVM.Items);

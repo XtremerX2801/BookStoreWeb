@@ -1,4 +1,4 @@
-﻿using Rookies.CustomerSites.Models;
+﻿using Rookies.CustomerSites.ViewModel;
 
 namespace Rookies.CustomerSites.Services
 {

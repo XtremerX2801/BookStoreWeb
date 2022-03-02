@@ -1,4 +1,4 @@
-﻿namespace Rookies.CustomerSites.Models
+﻿namespace Rookies.CustomerSites.ViewModel
 {
     public class Category
     {

@@ -1,4 +1,4 @@
-﻿using Rookies.CustomerSites.Models;
+﻿using Rookies.CustomerSites.ViewModel;
 
 namespace Rookies.CustomerSites.Services
 {
@@ -6,7 +6,7 @@ namespace Rookies.CustomerSites.Services
     {
         Task<List<Book>> GetBooksAsync();
         Task<Book> GetBookAsync(int id);
-
+        Task<List<Book>> GetBookByNameAsync(string bookName);
         void DeleteBookAsync(int id);
     }
 }
