@@ -9,7 +9,7 @@ namespace Rookies.CustomerSites.Pages
         [BindProperty(SupportsGet = true)]
         public string BookName { get; set; }
 
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public string GetBookName { get; set; }
 
         public void OnGet()
@@ -18,7 +18,7 @@ namespace Rookies.CustomerSites.Pages
             {
                 GetBookName = "";
             }
-            else
+            else if (BookName != null)
             {
                 GetBookName = $"search/{BookName}";
             }
