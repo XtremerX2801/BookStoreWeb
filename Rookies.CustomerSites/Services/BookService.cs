@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using Rookies.CustomerSites.ViewModel;
+using Rookies.Shared.Dto;
 
 namespace Rookies.CustomerSites.Services
 {
@@ -23,7 +24,7 @@ namespace Rookies.CustomerSites.Services
         public async Task<List<Book>> GetBookByNameAsync(string bookName)
         {
             using var client = new HttpClient();
-            var endPoint = "https://localhost:7115/api/Books/search/{bookName}";
+            var endPoint = $"https://localhost:7115/api/Books/{bookName}";
             var json = await client.GetStringAsync(endPoint);
             return JsonConvert.DeserializeObject<List<Book>>(json);
         }

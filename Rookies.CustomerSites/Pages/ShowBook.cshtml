@@ -3,7 +3,7 @@
 @{
 }
 
-<form asp-page="./Index"  method="get">
+<form asp-page="./ShowBook"  method="get">
     <div class="form-actions no-color">
         <p>
                 <input type="text" asp-for ="@Model.BookName"  placeholder="Find Book"/>
@@ -12,4 +12,4 @@
     </div>
 </form>
 
-@await Component.InvokeAsync("BookSearch", Model.PagedResponseVM.Items);
+@await Component.InvokeAsync("BookSearch", Model.GetBookName)
