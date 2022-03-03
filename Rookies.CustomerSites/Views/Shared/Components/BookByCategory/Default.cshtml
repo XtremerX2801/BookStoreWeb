@@ -1,0 +1,9 @@
+﻿@model List<Rookies.CustomerSites.ViewModel.Book>
+<h3>BOOK by NAME</h3>
+<ul>
+    @foreach (var book in Model)
+    {
+        <li><a href="book/@book.BookId" style="color:#0F0668; text-decoration:none;">@book.BookName</a></li>
+        <li>@book.BookPrice</li>
+    }
+</ul>

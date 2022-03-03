@@ -8,6 +8,8 @@
 
         public string Author { get; set; }
 
+        public string BookCategory { get; set; }
+
         public int BookPrice { get; set; }
     }
 }

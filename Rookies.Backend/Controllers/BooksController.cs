@@ -45,11 +45,21 @@ namespace Rookies.Backend.Controllers
         }
 
 
-        // GET: api/Books/Name
+        // GET: api/Books/search/Math
         [HttpGet("search/{BookName}")]
         public ActionResult<List<BookDto>> GetProductByName(string bookName)
         {
             var book = GetBookByName(bookName);
+            var bookDto = _mapper.Map<List<BookDto>>(book);
+
+            return Ok(bookDto);
+        }
+
+        // GET: api/Books/category/Novel
+        [HttpGet("category/{BookCategory}")]
+        public ActionResult<List<BookDto>> GetProductByCategory(string BookCategory)
+        {
+            var book = GetBookByCategory(BookCategory);
             var bookDto = _mapper.Map<List<BookDto>>(book);
 
             return Ok(bookDto);
@@ -121,6 +131,12 @@ namespace Rookies.Backend.Controllers
         private List<Book> GetBookByName(string BookName)
         {
             var book = _context.Books.Where(p => p.BookName.Contains(BookName)).ToList();
+            return book;
+        }
+
+        private List<Book> GetBookByCategory(string BookCategory)
+        {
+            var book = _context.Books.Where(p => p.BookCategory == BookCategory).ToList();
             return book;
         }
     }

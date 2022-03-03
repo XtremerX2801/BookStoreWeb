@@ -29,6 +29,14 @@ namespace Rookies.CustomerSites.Services
             return JsonConvert.DeserializeObject<List<Book>>(json);
         }
 
+        public async Task<List<Book>> GetBookByCategoryAsync(string bookCategory)
+        {
+            using var client = new HttpClient();
+            var endPoint = $"https://localhost:7115/api/Books/{bookCategory}";
+            var json = await client.GetStringAsync(endPoint);
+            return JsonConvert.DeserializeObject<List<Book>>(json);
+        }
+
         public async void DeleteBookAsync(int id)
         {
             using var client = new HttpClient();
