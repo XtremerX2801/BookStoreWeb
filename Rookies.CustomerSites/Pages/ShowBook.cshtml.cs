@@ -16,7 +16,7 @@ namespace Rookies.CustomerSites.Pages
         {
             if (BookName == null)
             {
-                GetBookName = "";
+                GetBookName = "search/Math";
             }
             else if (BookName != null)
             {

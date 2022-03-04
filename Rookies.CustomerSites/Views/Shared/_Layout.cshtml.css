@@ -11,6 +11,10 @@ a {
   color: #0077cc;
 }
 
+.category-navbar a:hover {
+    color: yellow;
+}
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
@@ -66,4 +70,3 @@ button.accept-policy {
     border-radius: 60px;
     font-weight: 700;
 }
-
