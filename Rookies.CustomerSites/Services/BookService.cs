@@ -32,7 +32,7 @@ namespace Rookies.CustomerSites.Services
         public async Task<List<Book>> GetBookByCategoryAsync(string bookCategory)
         {
             using var client = new HttpClient();
-            var endPoint = $"https://localhost:7115/api/Books/{bookCategory}";
+            var endPoint = $"https://localhost:7115/api/Books/category/{bookCategory}";
             var json = await client.GetStringAsync(endPoint);
             return JsonConvert.DeserializeObject<List<Book>>(json);
         }

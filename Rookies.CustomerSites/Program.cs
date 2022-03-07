@@ -10,7 +10,6 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddMvc();
-builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<IBookService, BookService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

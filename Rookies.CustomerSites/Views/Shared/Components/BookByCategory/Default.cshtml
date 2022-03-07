@@ -1,9 +1,7 @@
 ﻿@model List<Rookies.CustomerSites.ViewModel.Book>
-<h3>BOOK by NAME</h3>
-<ul>
+<h3>BOOK IN CATEGORY</h3>
+
     @foreach (var book in Model)
     {
-        <li><a href="book/@book.BookId" style="color:#0F0668; text-decoration:none;">@book.BookName</a></li>
-        <li>@book.BookPrice</li>
+        <h5><a href="book/@book.BookId" style="color:#0F0668; text-decoration:none;">@book.BookName</a></h5>
     }
-</ul>
