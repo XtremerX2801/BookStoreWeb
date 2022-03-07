@@ -12,8 +12,32 @@ namespace Rookies.CustomerSites.Controllers
             _logger = logger;
         }
 
-        [Route("category")]
-        public IActionResult Index()
+        [Route("category/education")]
+        public IActionResult Education()
+        {
+            return View();
+        }
+
+        [Route("category/novel")]
+        public IActionResult Novel()
+        {
+            return View();
+        }
+
+        [Route("category/cooking")]
+        public IActionResult Cooking()
+        {
+            return View();
+        }
+
+        [Route("category/travel")]
+        public IActionResult Travel()
+        {
+            return View();
+        }
+
+        [Route("category/arts")]
+        public IActionResult Arts()
         {
             return View();
         }
