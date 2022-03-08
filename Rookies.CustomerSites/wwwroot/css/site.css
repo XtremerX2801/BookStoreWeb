@@ -17,3 +17,16 @@ body {
   margin-bottom: 60px;
   font-family: "Roboto", sans-serif;
 }
+
+.ratings {
+    margin-right: 10px
+}
+
+.ratings i {
+    color: #cecece;
+    font-size: 32px
+}
+
+.rating-color {
+    color: #fbc634 !important
+}

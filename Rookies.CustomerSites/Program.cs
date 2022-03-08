@@ -5,9 +5,15 @@ using Rookies.CustomerSites.Data;
 using Rookies.CustomerSites.Areas.Identity.Data;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("AuthDbContextConnection");builder.Services.AddDbContext<AuthDbContext>(options =>
-    options.UseSqlServer(connectionString));builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<AuthDbContext>();
+var connectionString = builder.Configuration.GetConnectionString("AuthDbContextConnection");
+builder.Services.AddDbContext<AuthDbContext>(options => 
+    options.UseSqlServer(connectionString));
+builder.Services.AddDefaultIdentity<ApplicationUser>(options =>
+    {
+        options.SignIn.RequireConfirmedAccount = false;
+        options.Password.RequireUppercase = false;
+        options.Password.RequireNonAlphanumeric = false;
+    }).AddEntityFrameworkStores<AuthDbContext>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
