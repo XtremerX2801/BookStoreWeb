@@ -24,17 +24,17 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Books
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<RatingDto>>> GetBooks()
+        public async Task<ActionResult<IEnumerable<BookDto>>> GetBooks()
         {
             return Ok(await _context.Books.ToListAsync());
         }
 
         // GET: api/Books/5
         [HttpGet("id/{id}")]
-        public async Task<ActionResult<RatingDto>> GetBook(int id)
+        public async Task<ActionResult<BookDto>> GetBook(int id)
         {
             var book = await _context.Books.FindAsync(id);
-            var bookDto = _mapper.Map<RatingDto>(book);
+            var bookDto = _mapper.Map<BookDto>(book);
 
             if (book == null)
             {
@@ -47,20 +47,20 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Books/search/Math
         [HttpGet("search/{BookName}")]
-        public ActionResult<List<RatingDto>> GetProductByName(string bookName)
+        public ActionResult<List<BookDto>> GetProductByName(string bookName)
         {
             var book = GetBookByName(bookName);
-            var bookDto = _mapper.Map<List<RatingDto>>(book);
+            var bookDto = _mapper.Map<List<BookDto>>(book);
 
             return Ok(bookDto);
         }
 
         // GET: api/Books/category/Novel
         [HttpGet("category/{BookCategory}")]
-        public ActionResult<List<RatingDto>> GetProductByCategory(string BookCategory)
+        public ActionResult<List<BookDto>> GetProductByCategory(string BookCategory)
         {
             var book = GetBookByCategory(BookCategory);
-            var bookDto = _mapper.Map<List<RatingDto>>(book);
+            var bookDto = _mapper.Map<List<BookDto>>(book);
 
             return Ok(bookDto);
         }

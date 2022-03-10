@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Rookies.Backend;
 using Rookies.Backend.Models;
+using Rookies.Shared.Dto.Rating;
 
 namespace Rookies.Backend.Controllers
 {
@@ -16,10 +18,14 @@ namespace Rookies.Backend.Controllers
     public class RatingsController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
+        private readonly IMapper _mapper;
 
-        public RatingsController(ApplicationDbContext context)
+        public RatingsController(
+            ApplicationDbContext context,
+            IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
         // GET: api/Ratings
@@ -27,6 +33,16 @@ namespace Rookies.Backend.Controllers
         public async Task<ActionResult<IEnumerable<Rating>>> GetRatings()
         {
             return await _context.Ratings.ToListAsync();
+        }
+
+        // GET: api/Books/get-rating/1
+        [HttpGet("get-rating/{BookId}")]
+        public ActionResult<List<RatingDto>> GetProductByName(int bookId)
+        {
+            var rating = GetRatingById(bookId);
+            var ratingDto = _mapper.Map<List<RatingDto>>(rating);
+
+            return Ok(ratingDto);
         }
 
         // GET: api/Ratings/5
@@ -104,6 +120,12 @@ namespace Rookies.Backend.Controllers
         private bool RatingExists(int id)
         {
             return _context.Ratings.Any(e => e.RatingId == id);
+        }
+
+        private List<Rating> GetRatingById(int BookId)
+        {
+            var ratings = _context.Ratings.Where(p => p.BookId == BookId).ToList();
+            return ratings;
         }
     }
 }

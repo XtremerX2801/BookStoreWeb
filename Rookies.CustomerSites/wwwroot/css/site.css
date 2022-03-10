@@ -27,6 +27,7 @@ body {
     font-size: 32px;
 }
 
-.rating-color{
+.rating-color {
     color: #fbc634 !important;
+    text-decoration: none;
 }

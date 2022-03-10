@@ -1,5 +1,5 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model Rookies.CustomerSites.ViewModel.Book
 
-<h6><a asp-area="" asp-page="/ProductDetail" style="color:#0F0668; text-decoration:none;">@Model.BookName</a></h6>
+<h6><a asp-area="" asp-page="/ProductDetail" asp-route-id="@Model.BookId" style="color:#0F0668; text-decoration:none;">@Model.BookName</a></h6>
 <p style="color:#33D1EA">@Model.Author</p>
