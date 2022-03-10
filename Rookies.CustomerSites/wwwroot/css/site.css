@@ -24,9 +24,9 @@ body {
 
 .ratings i {
     color: #cecece;
-    font-size: 32px
+    font-size: 32px;
 }
 
-.rating-color {
-    color: #fbc634 !important
+.rating-color{
+    color: #fbc634 !important;
 }
