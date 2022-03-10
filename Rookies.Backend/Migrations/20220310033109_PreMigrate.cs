@@ -4,7 +4,7 @@
 
 namespace Rookies.Backend.Migrations
 {
-    public partial class DeUpdate : Migration
+    public partial class PreMigrate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

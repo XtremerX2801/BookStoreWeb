@@ -11,6 +11,6 @@ namespace Rookies.Backend.Models
         public int BookId { get; set; }
 
         [Required]
-        public int? RatingPoint { get; set; }    
+        public int RatingPoint { get; set; }    
     }
 }

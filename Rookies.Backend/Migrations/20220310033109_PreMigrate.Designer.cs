@@ -12,8 +12,8 @@ using Rookies.Backend;
 namespace Rookies.Backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220228063250_UpdateBook")]
-    partial class UpdateBook
+    [Migration("20220310033109_PreMigrate")]
+    partial class PreMigrate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -180,11 +180,8 @@ namespace Rookies.Backend.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("BookPrice")
+                    b.Property<int?>("BookPrice")
                         .HasColumnType("int");
-
-                    b.Property<string>("Publisher")
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("BookId");
 
@@ -261,11 +258,6 @@ namespace Rookies.Backend.Migrations
 
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("bit");
-
-                    b.Property<string>("UserAddress")
-                        .IsRequired()
-                        .HasMaxLength(400)
-                        .HasColumnType("nvarchar(400)");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256)

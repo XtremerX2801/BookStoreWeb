@@ -12,7 +12,7 @@ using Rookies.Backend;
 namespace Rookies.Backend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220310030918_RatingModel")]
+    [Migration("20220310033246_RatingModel")]
     partial class RatingModel
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -209,6 +209,26 @@ namespace Rookies.Backend.Migrations
                     b.HasKey("CategoryId");
 
                     b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Rookies.Backend.Models.Rating", b =>
+                {
+                    b.Property<int>("RatingId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RatingId"), 1L, 1);
+
+                    b.Property<int>("BookId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("RatingPoint")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.HasKey("RatingId");
+
+                    b.ToTable("Ratings");
                 });
 
             modelBuilder.Entity("Rookies.Backend.Models.User", b =>

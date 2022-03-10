@@ -2,6 +2,7 @@
 using Rookies.Backend.Models;
 using Rookies.Shared.Dto.Category;
 using Rookies.Shared.Dto.Book;
+using Rookies.Shared.Dto.Rating;
 
 namespace Rookies.Backend.Mapping
 {
@@ -13,6 +14,7 @@ namespace Rookies.Backend.Mapping
             {
                 CreateMap<Book, BookDto>();
                 CreateMap<Category, CategoryDto>();
+                CreateMap<Rating, RatingDto>();
             }
         }
     }

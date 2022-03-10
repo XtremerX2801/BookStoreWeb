@@ -12,7 +12,7 @@ namespace Rookies.CustomerSites.Mapping
         {
             public AutoMapperProfile()
             {
-                CreateMap<Book, BookDto>();
+                CreateMap<Book, RatingDto>();
                 CreateMap<BaseQueryCriteriaVM, BaseQueryCriteriaDto>();
                 CreateMap< PagedResponseVM<List<Book>> , PagedResponseDto<List<Book>>>();
                 CreateMap<Category, CategoryDto>();
