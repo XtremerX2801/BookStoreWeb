@@ -34,7 +34,7 @@ namespace Rookies.CustomerSites.Pages
             Author = book.Author;
             BookPrice = book.BookPrice;
 
-            
+            // Get rating later
         }
     }
 }
