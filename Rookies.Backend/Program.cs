@@ -18,6 +18,17 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 builder.Services.AddSwaggerGen();
 
+// Add allowance to admin site
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowOrigins",
+        policy =>
+        {
+            policy.WithOrigins("*")
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+});
 // Register Identity
 //builder.Services.AddIdentity<User, IdentityRole>()
 //    .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -51,7 +62,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("AllowOrigins");
 app.UseAuthorization();
 
 app.MapControllers();
