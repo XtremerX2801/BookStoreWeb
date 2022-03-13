@@ -1,33 +1,22 @@
-import logo from './logo.svg';
-import { useEffect, useState } from 'react';
-import { getBooks } from "./service/bookService"
+
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Home from "./Home";
 import './App.css';
+import GetBooks from './GetBooks';
+import GetBookById from './GetBookById';
 
 function App() {
-  const [data, setData] = useState(null)
-  useEffect(async () => {
-    setData(await getBooks())
-  }, [])
-  return (
-    <div className="App">
-      <table>
-        <thead>
-          <tr>
-            <td>Name</td>
-            <td>Author</td>
-          </tr>
-        </thead>
-        <tbody>
-          {data ? data.data.map(_ => (
-            <tr key={_.bookId}>
-              <td>{_.bookName}</td>
-              <td>{_.author}</td>
-            </tr>
-          )) : (<></>)}
-        </tbody>
-      </table>
-    </div>
-  );
+    return (
+        <div className="App">
+          <Router>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<GetBooks />} />
+              <Route path="/product-id" element={<GetBookById />} />
+            </Routes>
+          </Router>
+        </div>
+    );
 }
 
 export default App;

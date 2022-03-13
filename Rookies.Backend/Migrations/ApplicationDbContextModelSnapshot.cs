@@ -183,7 +183,7 @@ namespace Rookies.Backend.Migrations
 
                     b.HasKey("BookId");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("Rookies.Backend.Models.Category", b =>
@@ -206,7 +206,7 @@ namespace Rookies.Backend.Migrations
 
                     b.HasKey("CategoryId");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Rookies.Backend.Models.Rating", b =>
@@ -227,7 +227,7 @@ namespace Rookies.Backend.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("Ratings");
+                    b.ToTable("Ratings", (string)null);
                 });
 
             modelBuilder.Entity("Rookies.Backend.Models.User", b =>
