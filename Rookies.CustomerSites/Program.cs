@@ -23,6 +23,7 @@ builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddMvc();
 builder.Services.AddTransient<IBookService, BookService>();
+builder.Services.AddTransient<IRatingService, RatingService>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

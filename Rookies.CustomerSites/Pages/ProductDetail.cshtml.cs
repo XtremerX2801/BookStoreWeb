@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Rookies.CustomerSites.Services;
+using Rookies.CustomerSites.ViewModel;
 
 namespace Rookies.CustomerSites.Pages
 {
@@ -8,10 +9,12 @@ namespace Rookies.CustomerSites.Pages
     {
 
         private readonly IBookService _booksService;
+        private readonly IRatingService _ratingService;
 
-        public ProductDetailModel(IBookService bookService)
+        public ProductDetailModel(IBookService bookService, IRatingService ratingService)
         {
             _booksService = bookService;
+            _ratingService = ratingService;
         }
 
         [BindProperty(SupportsGet = true)]
@@ -29,12 +32,20 @@ namespace Rookies.CustomerSites.Pages
         public async Task OnGetAsync(int id, int rating)
         {
             BookId = id;
+
             var book = await _booksService.GetBookAsync(id);
             BookName = book.BookName;
             Author = book.Author;
             BookPrice = book.BookPrice;
 
-            // Get rating later
+            if (rating != 0) {
+                var ratingModel = new Rating
+                {
+                    RatingPoint = rating,
+                    BookId = id
+                };
+                await _ratingService.PostRatingAsync(ratingModel);
+            }
         }
     }
 }

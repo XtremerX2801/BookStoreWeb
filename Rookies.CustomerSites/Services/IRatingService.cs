@@ -4,8 +4,10 @@ namespace Rookies.CustomerSites.Services
 {
     public interface IRatingService
     {
+        Task<Rating> GetRatingByIdAsync(int RatingId);
+
         Task<List<Rating>> GetRatingsAsync(int bookId);
 
-        void PostRatingAsync(int bookId);
+        Task<HttpResponseMessage> PostRatingAsync(Rating ratingModel);
     }
 }

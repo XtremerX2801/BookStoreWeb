@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Rookies.Backend.Models
 {
-    public class Rating
+    public class ProductRating
     {
         [Key]
         public int RatingId { get; set; }

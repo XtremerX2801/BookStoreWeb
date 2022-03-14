@@ -14,7 +14,7 @@ namespace Rookies.Backend.Mapping
             {
                 CreateMap<Book, BookDto>();
                 CreateMap<Category, CategoryDto>();
-                CreateMap<Rating, RatingDto>();
+                CreateMap<ProductRating, RatingDto>();
             }
         }
     }

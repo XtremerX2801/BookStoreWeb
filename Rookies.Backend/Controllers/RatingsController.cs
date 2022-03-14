@@ -30,9 +30,9 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Ratings
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Rating>>> GetRatings()
+        public async Task<ActionResult<IEnumerable<ProductRating>>> GetRatings()
         {
-            return await _context.Ratings.ToListAsync();
+            return await _context.ProductRatings.ToListAsync();
         }
 
         // GET: api/Books/get-rating/1
@@ -47,9 +47,9 @@ namespace Rookies.Backend.Controllers
 
         // GET: api/Ratings/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Rating>> GetRating(int id)
+        public async Task<ActionResult<ProductRating>> GetRating(int id)
         {
-            var rating = await _context.Ratings.FindAsync(id);
+            var rating = await _context.ProductRatings.FindAsync(id);
 
             if (rating == null)
             {
@@ -62,7 +62,7 @@ namespace Rookies.Backend.Controllers
         // PUT: api/Ratings/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutRating(int id, Rating rating)
+        public async Task<IActionResult> PutRating(int id, ProductRating rating)
         {
             if (id != rating.RatingId)
             {
@@ -93,9 +93,9 @@ namespace Rookies.Backend.Controllers
         // POST: api/Ratings
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Rating>> PostRating(Rating rating)
+        public async Task<ActionResult<ProductRating>> PostRating(ProductRating rating)
         {
-            _context.Ratings.Add(rating);
+            _context.ProductRatings.Add(rating);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetRating", new { id = rating.RatingId }, rating);
@@ -105,13 +105,13 @@ namespace Rookies.Backend.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRating(int id)
         {
-            var rating = await _context.Ratings.FindAsync(id);
+            var rating = await _context.ProductRatings.FindAsync(id);
             if (rating == null)
             {
                 return NotFound();
             }
 
-            _context.Ratings.Remove(rating);
+            _context.ProductRatings.Remove(rating);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -119,12 +119,12 @@ namespace Rookies.Backend.Controllers
 
         private bool RatingExists(int id)
         {
-            return _context.Ratings.Any(e => e.RatingId == id);
+            return _context.ProductRatings.Any(e => e.RatingId == id);
         }
 
-        private List<Rating> GetRatingById(int BookId)
+        private List<ProductRating> GetRatingById(int BookId)
         {
-            var ratings = _context.Ratings.Where(p => p.BookId == BookId).ToList();
+            var ratings = _context.ProductRatings.Where(p => p.BookId == BookId).ToList();
             return ratings;
         }
     }

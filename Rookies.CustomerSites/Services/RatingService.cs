@@ -6,6 +6,14 @@ namespace Rookies.CustomerSites.Services
 {
     public class RatingService : IRatingService
     {
+        public async Task<Rating> GetRatingByIdAsync(int RatingId)
+        {
+            using var client = new HttpClient();
+            var endPoint = $"https://localhost:7115/api/Ratings/{RatingId}";
+            var json = await client.GetStringAsync(endPoint);
+            return JsonConvert.DeserializeObject<Rating>(json);
+        }
+
         public async Task<List<Rating>> GetRatingsAsync(int bookId)
         {
             using var client = new HttpClient();
@@ -14,12 +22,12 @@ namespace Rookies.CustomerSites.Services
             return JsonConvert.DeserializeObject<List<Rating>>(json);
         }
 
-        public async void PostRatingAsync(int bookId)
+        public async Task<HttpResponseMessage> PostRatingAsync(Rating ratingModel)
         {
             using var client = new HttpClient();
             var endPoint = $"https://localhost:7115/api/Ratings";
-            var json = await client.PostAsJsonAsync(endPoint, NewRating(bookId));
-            //return JsonConvert.DeserializeObject<Rating>(json);
+            var json = await client.PostAsJsonAsync(endPoint, ratingModel);
+            return json;
         }
 
         private Rating NewRating(int id)

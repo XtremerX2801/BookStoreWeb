@@ -21,7 +21,7 @@ namespace Rookies.Backend
 
         public DbSet<Book> Books { get; set; }
 
-        public DbSet<Rating> Ratings { get; set; }
+        public DbSet<ProductRating> ProductRatings { get; set; }
 
     }
 }
