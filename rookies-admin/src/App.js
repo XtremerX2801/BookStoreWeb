@@ -1,28 +1,43 @@
 
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./Home";
 import './App.css';
 import GetBooks from './GetBooks';
-import GetBookById from './GetBookById';
 import GetCategories from './GetCategories';
 import GetBooksByCategory from "./GetBooksByCategory";
 import GetBooksByName from "./GetBooksByName";
+import React from "react";
+import GetBookById from './GetBookById';
 
-function App() {
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {bookId: 5};
+  }
+
+  render() {
     return (
-        <div className="App">
+      <React.Fragment>
           <Router>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<GetBooks />} />
-              <Route path="/product-id/1" element={<GetBookById />} />
-              <Route path="/categories" element={<GetCategories />} />
-              <Route path="/product-name" element={<GetBooksByName />} />
-              <Route path="/product-category" element={<GetBooksByCategory />} />
-            </Routes>
-          </Router>
-        </div>
-    );
+          <Routes>
+            <Route path="/" element={<Home bookId={this.state.bookId}/>} />
+            <Route path="/product-id/:bookid" element={<GetBookById/>} />
+            <Route path="/products" element={<GetBooks />} />
+            <Route path="/categories" element={<GetCategories />} />
+            <Route path="/product-name" element={<GetBooksByName />} />
+            <Route path="/product-category" element={<GetBooksByCategory />} />
+          </Routes>
+        </Router>
+      </React.Fragment>
+    )
+  }
+
+  // return (
+  //     <div className="App">
+        
+  //     </div>
+  // );
 }
 
 export default App;

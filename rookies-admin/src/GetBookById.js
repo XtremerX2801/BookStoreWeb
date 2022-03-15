@@ -1,11 +1,18 @@
 import { getBookById } from "./service/bookService"
 import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
 
 
 const GetBookById = (props) => {
     const [data, setData] = useState(null)
         useEffect(async () => {
     setData(await getBookById(1)) }, [])
+
+    console.log(1);
+    console.log(props);
+
+    const {bookid} = useParams()
+    console.log(bookid);
 
     return (
         <div>
@@ -15,6 +22,7 @@ const GetBookById = (props) => {
                     <td>Name</td>
                     <td>Author</td>
                     <td>Price</td>
+                    <td>{bookid}</td>
                 </tr>
                 </thead>
                 <tbody>
