@@ -37,13 +37,16 @@ const updateValue = () => {
                 </tr>
                 </thead>
                 <tbody>
-                    {data ? data.data.map(_ => (
-                    <tr key={_.bookId}>
-                        <td>{_.bookName}</td>
-                        <td>{_.author}</td>
-                        <td>{_.bookPrice}$</td>
-                    </tr>
-                    )) : (<></>)}
+                    {data ? data.data.map(_ => 
+                        (
+                            <tr key={_.bookId}>
+                                <td>{_.bookName}</td>
+                                <td>{_.author}</td>
+                                <td>{_.bookPrice}$</td>
+                                <td><button>Edit</button></td>
+                            </tr>
+                        )
+                    ) : (<></>)}
                 </tbody>
             </table>
         </div>

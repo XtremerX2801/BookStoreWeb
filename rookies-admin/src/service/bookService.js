@@ -13,13 +13,13 @@ export async function getBookById(id) {
 }
 
 export async function getBookByName(bookName) { 
-    const endpoint = "https://localhost:7115/api/Books" + bookName;
+    const endpoint = "https://localhost:7115/api/Books/search/" + bookName;
     var response = await axios.get(endpoint);
     return response
 }
 
 export async function getBookByCategory(categoryName) { 
-    const endpoint = "https://localhost:7115/api/Books/category" + categoryName;
+    const endpoint = "https://localhost:7115/api/Books/category/" + categoryName;
     var response = await axios.get(endpoint);
     return response
 }

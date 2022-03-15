@@ -17,8 +17,6 @@ namespace Rookies.Backend.Models
 
         public int? BookPrice { get; set; }
 
-        public List<ProductRating> BookRatings { get; set; }
-
         public string? BookImg { get; set; }
 
     }
