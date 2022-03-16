@@ -25,8 +25,8 @@ class App extends React.Component {
             <Route path="/product-id/:bookid" element={<GetBookById/>} />
             <Route path="/products" element={<GetBooks />} />
             <Route path="/categories" element={<GetCategories />} />
-            <Route path="/product-name" element={<GetBooksByName />} />
-            <Route path="/product-category" element={<GetBooksByCategory />} />
+            <Route path="/product-name/:bookname" element={<GetBooksByName />} />
+            <Route path="/product-category/:bookcategory" element={<GetBooksByCategory />} />
           </Routes>
         </Router>
       </React.Fragment>

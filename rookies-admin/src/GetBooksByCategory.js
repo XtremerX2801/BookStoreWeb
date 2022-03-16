@@ -1,16 +1,19 @@
 import { getBookByCategory } from "./service/bookService"
 import React, { useEffect, useState } from 'react';
-import Link from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 const GetBooksByCategory = (props) => {
+
+    const {bookcategory} = useParams()
+
     const [data, setData] = useState(null)
         useEffect(async () => {
-    setData(await getBookByCategory("Education")) }, [])
+    setData(await getBookByCategory(bookcategory)) }, [])
 
     return (
 
         <div>
-            <h2>Category: Education</h2>
+            <h2>Category: {bookcategory}</h2>
             <br></br>
             <table>
                 <thead>

@@ -1,16 +1,18 @@
 import { getBookByName } from "./service/bookService"
 import React, { useEffect, useState } from 'react';
-import Link from "react-router-dom";
+import {useParams} from "react-router-dom";
 
 const GetBooksByName = (props) => {
+    const {bookname} = useParams()
+
     const [data, setData] = useState(null)
         useEffect(async () => {
-    setData(await getBookByName("English")) }, [])
+    setData(await getBookByName(bookname)) }, [])
 
     return (
 
         <div>
-            <h2>Name: English</h2>
+            <h2>Name: {bookname}</h2>
             <br></br>
             <table>
                 <thead>

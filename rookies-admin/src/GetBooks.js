@@ -7,12 +7,20 @@ const GetBooks = (props) => {
         useEffect(async () => {
     setData(await getBooks()) }, [])
 
-    const newTo = { 
-        pathname: "/product-id/5"
-      };
+    var productId = document.getElementById("product-search-id");
+    var productName = document.getElementById("product-search-name");
+    var productCategory = document.getElementById("product-search-category");
 
-    const updateValue = () => {
-        
+    const enterID = () => {
+        window.location.href = "/product-id/" + String(productId.value);
+    }
+
+    const enterName = () => {
+        window.location.href = "/product-name/" + String(productName.value);
+    }
+
+    const enterCategory = () => {
+        window.location.href = "/product-category/" + String(productCategory.value);
     }
 
     return (
@@ -20,8 +28,16 @@ const GetBooks = (props) => {
         <div>
 
             <div className="search-wrapper">
-                <input type="search" id="search" placeholder="Enter Book ID"></input>
-                <button onClick={() => updateValue()}><Link to={newTo}>Submit</Link></button>
+                <input type="search" id="product-search-id" placeholder="Enter Book ID"></input>
+                <button onClick={() => enterID()}>Submit</button>
+                <br></br>
+
+                <input type="search" id="product-search-name" placeholder="Enter Book Name"></input>
+                <button onClick={() => enterName()}>Submit</button>
+                <br></br>
+
+                <input type="search" id="product-search-category" placeholder="Enter Book Category"></input>
+                <button onClick={() => enterCategory()}>Submit</button>
             </div>
 
             <table>
