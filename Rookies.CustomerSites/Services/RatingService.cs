@@ -29,14 +29,5 @@ namespace Rookies.CustomerSites.Services
             var json = await client.PostAsJsonAsync(endPoint, ratingModel);
             return json;
         }
-
-        private Rating NewRating(int id)
-        {
-            var rating = new Rating();
-            rating.BookId = id;
-            rating.RatingPoint = 5;
-
-            return rating;
-        }
     }
 }

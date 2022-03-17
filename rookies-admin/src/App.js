@@ -10,6 +10,7 @@ import GetBookById from './GetBookById';
 import GetCategories from './GetCategories';
 import GetCategoryById from './GetCategoryById';
 import GetCategoryByName from './GetCategoryByName';
+import CreateNewBook from "./CreateNewBook";
 
 class App extends React.Component {
 
@@ -29,6 +30,7 @@ class App extends React.Component {
             <Route path="/products" element={<GetBooks />} />
             <Route path="/product-name/:bookname" element={<GetBooksByName />} />
             <Route path="/product-category/:bookcategory" element={<GetBooksByCategory />} />
+            <Route path="/product-create" element={<CreateNewBook />} />
 
             <Route path="/categories" element={<GetCategories />} />
             <Route path="/category-id/:categoryid" element={<GetCategoryById/>} />

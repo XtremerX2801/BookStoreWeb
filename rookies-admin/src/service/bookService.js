@@ -23,3 +23,15 @@ export async function getBookByCategory(categoryName) {
     var response = await axios.get(endpoint);
     return response
 }
+
+export async function createNewBook(book) { 
+    const endpoint = "https://localhost:7115/api/Books";
+    var response = await axios.post(endpoint, book);
+    return response
+}
+
+export async function updateBook(book) { 
+    const endpoint = "https://localhost:7115/api/Books";
+    var response = await axios.put(endpoint, book);
+    return response
+}

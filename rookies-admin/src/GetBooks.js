@@ -11,15 +11,15 @@ const GetBooks = (props) => {
     var productName = document.getElementById("product-search-name");
     var productCategory = document.getElementById("product-search-category");
 
-    const enterID = () => {
+    function enterID () {
         window.location.href = "/product-id/" + String(productId.value);
     }
 
-    const enterName = () => {
+    function enterName () {
         window.location.href = "/product-name/" + String(productName.value);
     }
 
-    const enterCategory = () => {
+    function enterCategory()  {
         window.location.href = "/product-category/" + String(productCategory.value);
     }
 
