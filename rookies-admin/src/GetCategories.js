@@ -7,9 +7,31 @@ const GetCategories = (props) => {
         useEffect(async () => {
     setData(await getCategories()) }, [])
 
+    var categoryId = document.getElementById("category-search-id");
+    var categoryName = document.getElementById("category-search-name");
+
+    const enterID = () => {
+        window.location.href = "/category-id/" + String(categoryId.value);
+    }
+
+    const enterName = () => {
+        window.location.href = "/category-name/" + String(categoryName.value);
+    }
+
     return (
 
         <div>
+
+            <div className="search-wrapper">
+                <input type="search" id="category-search-id" placeholder="Enter Category ID"></input>
+                <button onClick={() => enterID()}>Submit</button>
+                <br></br>
+
+                <input type="search" id="category-search-name" placeholder="Enter Category Name"></input>
+                <button onClick={() => enterName()}>Submit</button>
+            
+            </div>
+
             <table>
                 <thead>
                 <tr>

@@ -27,7 +27,7 @@ namespace Rookies.Backend.Controllers
         }
 
         // GET: api/Categories/5
-        [HttpGet("{id}")]
+        [HttpGet("id/{id}")]
         public async Task<ActionResult<CategoryDto>> GetCategory(int id)
         {
             var category = await _context.Categories.FindAsync(id);
@@ -37,6 +37,16 @@ namespace Rookies.Backend.Controllers
             {
                 return NotFound();
             }
+
+            return Ok(categoryDto);
+        }
+
+        // GET: api/Categoories/search/Education
+        [HttpGet("search/{CategoryName}")]
+        public ActionResult<List<CategoryDto>> GetCategoryByName(string categoryName)
+        {
+            var category = GetCateByName(categoryName);
+            var categoryDto = _mapper.Map<List<CategoryDto>>(category);
 
             return Ok(categoryDto);
         }
@@ -102,6 +112,12 @@ namespace Rookies.Backend.Controllers
         private bool CategoryExists(int id)
         {
             return _context.Categories.Any(e => e.CategoryId == id);
+        }
+
+        private List<Category> GetCateByName(string categoryName)
+        {
+            var category = _context.Categories.Where(p => p.CategoryName == categoryName).ToList();
+            return category;
         }
     }
 }
