@@ -11,6 +11,14 @@ const GetBookById = (props) => {
         useEffect(async () => {
     setData(await getBookById(bookid)) }, [])
 
+    function EditBook(bookId) {
+        window.location.href = "/product-update/" + String(bookId);
+    }
+
+    function DeleteBook(bookId) {
+        window.location.href = "/product-delete/" + String(bookId);
+    }
+
     return (
         <div>
             <h2>Id: {bookid}</h2>
@@ -29,7 +37,8 @@ const GetBookById = (props) => {
                         <td>{data.data.bookName}</td>
                         <td>{data.data.author}</td>
                         <td>{data.data.bookPrice}$</td>
-                        <td><button>Edit</button></td>
+                        <td><button onClick={() => EditBook(data.data.bookId)}>Edit</button></td>
+                        <td><button onClick={() => DeleteBook(data.data.bookId)}>Delete</button></td>
                     </tr>
                      : (<></>)}
                 </tbody>

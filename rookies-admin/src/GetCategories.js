@@ -18,6 +18,14 @@ const GetCategories = (props) => {
         window.location.href = "/category-name/" + String(categoryName.value);
     }
 
+    function EditCategory(id) {
+        window.location.href = "/category-update/" + String(id);
+    }
+
+    function DeleteCategory(id) {
+        window.location.href = "/category-delete/" + String(id);
+    }
+
     return (
 
         <div>
@@ -41,12 +49,13 @@ const GetCategories = (props) => {
                 </tr>
                 </thead>
                 <tbody>
-                    {data ? data.data.map(_ => (
-                    <tr key={_.categoryId}>
-                        <td>{_.categoryName}</td>
-                        <td>{_.displayOrder}</td>
-                        <td>{_.createdDate}</td>
-                        <td><button>Edit</button></td>
+                    {data ? data.data.map(category => (
+                    <tr key={category.categoryId}>
+                        <td>{category.categoryName}</td>
+                        <td>{category.displayOrder}</td>
+                        <td>{category.createdDate}</td>
+                        <td><button onClick={() => EditCategory(category.categoryId)}>Edit</button></td>
+                        <td><button onClick={() => DeleteCategory(category.categoryId)}>Delete</button></td>
                     </tr>
                     )) : (<></>)}
                 </tbody>

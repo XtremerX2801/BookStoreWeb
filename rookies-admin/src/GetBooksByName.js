@@ -9,6 +9,14 @@ const GetBooksByName = (props) => {
         useEffect(async () => {
     setData(await getBookByName(bookname)) }, [])
 
+    function EditBook(bookId) {
+        window.location.href = "/product-update/" + String(bookId);
+    }
+
+    function DeleteBook(bookId) {
+        window.location.href = "/product-delete/" + String(bookId);
+    }
+
     return (
 
         <div>
@@ -29,7 +37,8 @@ const GetBooksByName = (props) => {
                                 <td>{book.bookName}</td>
                                 <td>{book.author}</td>
                                 <td>{book.bookPrice}$</td>
-                                <td><button>Edit</button></td>
+                                <td><button onClick={() => EditBook(book.bookId)}>Edit</button></td>
+                                <td><button onClick={() => DeleteBook(book.bookId)}>Delete</button></td>
                             </tr>
                         )
                     }) : (<></>)}

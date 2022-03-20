@@ -9,6 +9,14 @@ const GetCategoryByName = (props) => {
         useEffect(async () => {
     setData(await getCategoryByName(categoryname)) }, [])
 
+    function EditCategory(categoryId) {
+        window.location.href = "/category-update/" + String(categoryId);
+    }
+
+    function DeleteCategory(id) {
+        window.location.href = "/category-delete/" + String(id);
+    }
+
     return (
 
         <div>
@@ -27,7 +35,8 @@ const GetCategoryByName = (props) => {
                             <tr key={category.categoryId}>
                                 <td>{category.categoryName}</td>
                                 <td>{category.createdDate}</td>
-                                <td><button>Edit</button></td>
+                                <td><button onClick={() => EditCategory(category.categoryId)}>Edit</button></td>
+                                <td><button onClick={() => DeleteCategory(category.categoryId)}>Delete</button></td>
                             </tr>
                         )
                     }) : (<></>)}

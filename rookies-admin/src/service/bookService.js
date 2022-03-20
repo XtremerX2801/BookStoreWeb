@@ -30,8 +30,14 @@ export async function createNewBook(book) {
     return response
 }
 
-export async function updateBook(book) { 
-    const endpoint = "https://localhost:7115/api/Books";
+export async function updateBook(book, bookid) { 
+    const endpoint = "https://localhost:7115/api/Books/" + bookid;
     var response = await axios.put(endpoint, book);
+    return response
+}
+
+export async function deleteBook(bookid) { 
+    const endpoint = "https://localhost:7115/api/Books/" + bookid;
+    var response = await axios.delete(endpoint);
     return response
 }

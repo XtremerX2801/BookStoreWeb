@@ -23,6 +23,14 @@ const GetBooks = (props) => {
         window.location.href = "/product-category/" + String(productCategory.value);
     }
 
+    function EditBook(bookId) {
+        window.location.href = "/product-update/" + String(bookId);
+    }
+
+    function DeleteBook(bookId) {
+        window.location.href = "/product-delete/" + String(bookId);
+    }
+
     return (
 
         <div>
@@ -49,13 +57,14 @@ const GetBooks = (props) => {
                 </tr>
                 </thead>
                 <tbody>
-                    {data ? data.data.map(_ => 
+                    {data ? data.data.map(book => 
                         (
-                            <tr key={_.bookId}>
-                                <td>{_.bookName}</td>
-                                <td>{_.author}</td>
-                                <td>{_.bookPrice}$</td>
-                                <td><button>Edit</button></td>
+                            <tr key={book.bookId}>
+                                <td>{book.bookName}</td>
+                                <td>{book.author}</td>
+                                <td>{book.bookPrice}$</td>
+                                <td><button onClick={() => EditBook(book.bookId)}>Edit</button></td>
+                                <td><button onClick={() => DeleteBook(book.bookId)}>Delete</button></td>
                             </tr>
                         )
                     ) : (<></>)}

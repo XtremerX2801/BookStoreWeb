@@ -10,6 +10,14 @@ const GetCategoryById = (props) => {
         useEffect(async () => {
     setData(await getCategoryById(categoryid)) }, [])
 
+    function EditCategory(categoryId) {
+        window.location.href = "/category-update/" + String(categoryId);
+    }
+
+    function DeleteCategory(id) {
+        window.location.href = "/category-delete/" + String(id);
+    }
+
     return (
         <div>
             <h2>Id: {categoryid}</h2>
@@ -26,7 +34,8 @@ const GetCategoryById = (props) => {
                     <tr key={data.data.categoryId}>
                         <td>{data.data.categoryName}</td>
                         <td>{data.data.createdDate}</td>
-                        <td><button>Edit</button></td>
+                        <td><button onClick={() => EditCategory(data.data.categoryId)}>Edit</button></td>
+                        <td><button onClick={() => DeleteCategory(data.data.categoryId)}>Delete</button></td>
                     </tr>
                      : (<></>)}
                 </tbody>

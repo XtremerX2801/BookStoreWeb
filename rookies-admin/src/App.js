@@ -12,6 +12,10 @@ import GetCategoryById from './GetCategoryById';
 import GetCategoryByName from './GetCategoryByName';
 import CreateNewBook from "./CreateNewBook";
 import CreateNewCategory from "./CreateNewCategory";
+import UpdateBook from "./UpdateBook";
+import UpdateCategory from "./UpdateCategory";
+import DeleteBook from "./DeleteBook";
+import DeleteCategory from "./DeleteCategory";
 
 class App extends React.Component {
 
@@ -27,11 +31,15 @@ class App extends React.Component {
             <Route path="/product-name/:bookname" element={<GetBooksByName />} />
             <Route path="/product-category/:bookcategory" element={<GetBooksByCategory />} />
             <Route path="/product-create" element={<CreateNewBook />} />
+            <Route path="/product-update/:bookid" element={<UpdateBook />} />
+            <Route path="/product-delete/:bookid" element={<DeleteBook />} />
 
             <Route path="/categories" element={<GetCategories />} />
             <Route path="/category-id/:categoryid" element={<GetCategoryById/>} />
             <Route path="/category-name/:categoryname" element={<GetCategoryByName/>} />
             <Route path="/category-create" element={<CreateNewCategory />} />
+            <Route path="/category-update/:categoryid" element={<UpdateCategory />} />
+            <Route path="/category-delete/:categoryid" element={<DeleteCategory />} />
           </Routes>
         </Router>
       </React.Fragment>

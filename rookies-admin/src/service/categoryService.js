@@ -25,8 +25,14 @@ export async function createNewCategory(category) {
     return response
 }
 
-export async function updateCategory(category) { 
-    const endpoint = "https://localhost:7115/api/Categories";
+export async function updateCategory(category, categoryid) { 
+    const endpoint = "https://localhost:7115/api/Categories/" + categoryid;
     var response = await axios.put(endpoint, category);
+    return response
+}
+
+export async function deleteCategory(categoryid) { 
+    const endpoint = "https://localhost:7115/api/Categories/" + categoryid;
+    var response = await axios.delete(endpoint);
     return response
 }
