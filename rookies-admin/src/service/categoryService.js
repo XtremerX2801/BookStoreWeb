@@ -17,3 +17,16 @@ export async function getCategoryByName(categoryName) {
     var response = await axios.get(endpoint);
     return response
 }
+
+export async function createNewCategory(category) { 
+    console.log(category);
+    const endpoint = "https://localhost:7115/api/Categories";
+    var response = await axios.post(endpoint, category);
+    return response
+}
+
+export async function updateCategory(category) { 
+    const endpoint = "https://localhost:7115/api/Categories";
+    var response = await axios.put(endpoint, category);
+    return response
+}

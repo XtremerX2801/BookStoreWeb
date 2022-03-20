@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Home = (props) => {
-console.log(props);
 
   return (
     <>
@@ -12,6 +11,8 @@ console.log(props);
       <button><Link to="/product-create">CREATE NEW PRODUCTS</Link></button>
       <br></br>
       <button><Link to="/categories">SHOW ALL CATEGORIES</Link></button>
+      <br></br>
+      <button><Link to="/category-create">CREATE NEW CATEGORIES</Link></button>
     </>
   );
 };

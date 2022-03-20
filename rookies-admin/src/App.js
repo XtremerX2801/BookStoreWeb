@@ -11,20 +11,16 @@ import GetCategories from './GetCategories';
 import GetCategoryById from './GetCategoryById';
 import GetCategoryByName from './GetCategoryByName';
 import CreateNewBook from "./CreateNewBook";
+import CreateNewCategory from "./CreateNewCategory";
 
 class App extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {bookId: 5};
-  }
 
   render() {
     return (
       <React.Fragment>
           <Router>
           <Routes>
-            <Route path="/" element={<Home bookId={this.state.bookId}/>} />
+            <Route path="/" element={<Home />} />
 
             <Route path="/product-id/:bookid" element={<GetBookById/>} />
             <Route path="/products" element={<GetBooks />} />
@@ -35,6 +31,7 @@ class App extends React.Component {
             <Route path="/categories" element={<GetCategories />} />
             <Route path="/category-id/:categoryid" element={<GetCategoryById/>} />
             <Route path="/category-name/:categoryname" element={<GetCategoryByName/>} />
+            <Route path="/category-create" element={<CreateNewCategory />} />
           </Routes>
         </Router>
       </React.Fragment>

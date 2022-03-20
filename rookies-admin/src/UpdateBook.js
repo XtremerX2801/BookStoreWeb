@@ -1,7 +1,7 @@
 import { createNewBook } from "./service/bookService"
 import React, { useEffect, useState } from 'react';
 
-const CreateNewBook = (props) => {
+const UpdateBook = (props) => {
 
     const [book, setBook] = useState({})
 
@@ -73,4 +73,4 @@ const CreateNewBook = (props) => {
     );
 };
 
-export default CreateNewBook;
+export default UpdateBook;
