@@ -16,6 +16,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookies.Shared", "Rookies.S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rookies.AdminSite", "Rookies.AdminSite\Rookies.AdminSite.csproj", "{C72F0628-4C13-42A8-9AD3-D2B6563C1C5C}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookies.Testing", "Rookies.Testing\Rookies.Testing.csproj", "{7B929775-4C37-4800-A8C6-0041DC65EEFF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{C72F0628-4C13-42A8-9AD3-D2B6563C1C5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C72F0628-4C13-42A8-9AD3-D2B6563C1C5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C72F0628-4C13-42A8-9AD3-D2B6563C1C5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B929775-4C37-4800-A8C6-0041DC65EEFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B929775-4C37-4800-A8C6-0041DC65EEFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B929775-4C37-4800-A8C6-0041DC65EEFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B929775-4C37-4800-A8C6-0041DC65EEFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,8 @@
-﻿@model List<Rookies.CustomerSites.ViewModel.Book>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Rookies.CustomerSites.ViewModel.Book>
 <h3>BOOK IN CATEGORY</h3>
 
     @foreach (var book in Model)
     {
-        <h5><a href="book/@book.BookId" style="color:#0F0668; text-decoration:none;">@book.BookName</a></h5>
+        <h5><a asp-area="" asp-page="/ProductDetail" asp-route-id="@book.BookId" style="color:#0F0668; text-decoration:none;">@book.BookName</a></h5>
     }

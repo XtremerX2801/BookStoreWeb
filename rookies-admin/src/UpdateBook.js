@@ -1,4 +1,4 @@
-import { updateBook, deleteBook } from "./service/bookService"
+import { updateBook } from "./service/bookService"
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router-dom";
 
@@ -15,6 +15,16 @@ const UpdateBook = (props) => {
         var productAuthor = document.getElementById("product-author");
         var productCategory = document.getElementById("product-category");
         var productPrice = document.getElementById("product-price");
+        var productImg = null;
+
+        if (productCategory.value == "Education") {
+            productImg = "https://freepngimg.com/download/book/21793-5-book-icon.png";
+        } else if (productCategory.value == "Arts") {
+            productImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrHak2cmeZ0nMuSIToIfPpj319fqI8DgrN5A&usqp=CAU";
+        } else if (productCategory.value == "Novel"){
+            productImg = "https://www.amnesty.org.uk/files/styles/large_sponsored_image/s3/2020-12/justice_4.png?VersionId=XdsrvaYNcmgYgSNFmVmab9fS1u1W3Ovw&itok=YYsLLthl"
+        }
+
 
         setBook({
             "bookId": bookid,
@@ -22,7 +32,7 @@ const UpdateBook = (props) => {
             "author": productAuthor.value,
             "bookCategory": productCategory.value,
             "bookPrice": productPrice.value,
-            "bookImg": null
+            "bookImg": productImg
         })
     }
 

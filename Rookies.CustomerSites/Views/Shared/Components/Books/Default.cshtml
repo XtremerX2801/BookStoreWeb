@@ -3,6 +3,8 @@
 <ul>
     @foreach (var book in Model)
     {
-        <li><a href="">@book.BookName</a></li>
+        <li>
+            <a href="">Name: @book.BookName - - Author: @book.Author - - Price: @book.BookPrice</a>
+        </li>
     }
 </ul>

@@ -11,5 +11,7 @@
         public string BookCategory  { get; set; }
 
         public int BookPrice { get; set; }
+
+        public string BookImg { get; set;  }
     }
 }

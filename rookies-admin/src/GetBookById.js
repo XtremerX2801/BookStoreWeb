@@ -8,7 +8,7 @@ const GetBookById = (props) => {
     const {bookid} = useParams()
 
     const [data, setData] = useState(null)
-        useEffect(async () => {
+    useEffect(async () => {
     setData(await getBookById(bookid)) }, [])
 
     function EditBook(bookId) {

@@ -27,7 +27,13 @@ namespace Rookies.CustomerSites.Pages
         public string Author { get; set; }
 
         [BindProperty(SupportsGet = true)]
+        public string BookCategory { get; set; }
+
+        [BindProperty(SupportsGet = true)]
         public int BookPrice { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string BookImg { get; set; }
 
         public async Task OnGetAsync(int id, int rating)
         {
@@ -37,6 +43,8 @@ namespace Rookies.CustomerSites.Pages
             BookName = book.BookName;
             Author = book.Author;
             BookPrice = book.BookPrice;
+            BookCategory = book.BookCategory;
+            BookImg = book.BookImg;
 
             if (rating != 0) {
                 var ratingModel = new Rating

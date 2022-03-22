@@ -1,8 +1,11 @@
-﻿@model List<Rookies.CustomerSites.ViewModel.Book>
-<h3>BOOK by NAME</h3>
-<ul>
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model List<Rookies.CustomerSites.ViewModel.Book>
+<h3>ALL BOOKS</h3>
     @foreach (var book in Model)
     {
-        <li><a href="book/@book.BookId" style="color:#0F0668; text-decoration:none;">@book.BookName</a></li>
+        <li>
+            <a asp-area="" asp-page="/ProductDetail" asp-route-id="@book.BookId" style="color:#0F0668; text-decoration:none;">
+                Name: @book.BookName - - Author: @book.Author - - Price: @book.BookPrice
+            </a>
+        </li>
     }
-</ul>
