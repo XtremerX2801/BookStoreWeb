@@ -44,8 +44,9 @@ namespace Rookies.Testing
             };
 
             var bookId = 2;
-            var productDbContext = await GetDatabaseContextAsync();
-            var productController = new BooksController(productDbContext, _mapper);
+            var productDbContext = new MockDBContext();
+            var dbcontext = await productDbContext.GetDatabaseContext();
+            var productController = new BooksController(dbcontext, _mapper);
 
             var productResult = await productController.GetBook(bookId) as ObjectResult;
 
@@ -57,27 +58,5 @@ namespace Rookies.Testing
             Assert.Equal(bookModel.Author, returnValue.Author);
         }
 
-        private async Task<ApplicationDbContext> GetDatabaseContextAsync()
-        {
-            var options = new DbContextOptionsBuilder<ApplicationDbContext>()
-                .UseInMemoryDatabase(databaseName: "NewDBContext")
-                .Options;
-            var databaseContext = new ApplicationDbContext(options);
-            databaseContext.Database.EnsureCreated();
-            if (await databaseContext.Books.CountAsync() <= 0)
-            {
-                databaseContext.Books.Add(new Book()
-                {
-                    BookId = 2,
-                    BookName = "English Grammar in Use",
-                    Author = "Raymond Murphy",
-                    BookCategory = "Education",
-                    BookPrice = 12,
-                    BookImg = "https://freepngimg.com/download/book/21793-5-book-icon.png"
-                });
-                await databaseContext.SaveChangesAsync();
-            }
-            return databaseContext;
-        }
     }
 }
